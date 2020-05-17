@@ -31,7 +31,7 @@ cd ${WEB_DIR};
 /bin/sudo /bin/git reset --hard origin/master
 /bin/sudo /bin/git pull origin master | tee -a ${LOG_FILE}
 
-## 此处可做一些站点配置文件的修改操作
+## 此处可做一些站点配置文件的修改操作(如数据库配置、域名替换、调试模式修改)
 if [ ! -f ${HOT_UPDATE_FILE} ];then
   /bin/sudo ./${HOT_UPDATE_FILE}
 fi
