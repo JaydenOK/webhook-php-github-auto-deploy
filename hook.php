@@ -12,7 +12,7 @@ class ErrorCode
 
 class WebHookUtil
 {
-	// webhook 秘钥
+    // webhook 设置的秘钥
     const SECRET = 'XXXXXXXXXXXXXXXXXXXXXXXX';
     protected $rawData;
     protected $data;
@@ -95,6 +95,7 @@ class WebHookUtil
         }
     }
 
+    //执行任务
     private function handle()
     {
         $cmd = "cd {$this->deployPath}; /bin/sudo ./auto_deploy.sh {$this->repository}";
@@ -111,5 +112,5 @@ class WebHookUtil
     }
 }
 
-//执行开始
+//开始执行
 (new WebHookUtil())->run();
