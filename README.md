@@ -5,4 +5,4 @@
 hook.php 接收github服务器的webhook请求，数据校验等
 
 ###
-auto_deploy.sh  根据不同请求，执行资源更新，部署操作
+auto_deploy.sh  根据不同的仓库hook请求，执行资源更新、部署操作
