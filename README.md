@@ -36,12 +36,12 @@ ssh -T git@github.com
 可能出现：ssh: connect to host github.com port 22: Connection refused
 解决：进入用户.ssh的目录，创建文件 touch config && chmod 600 config ,内容如下，出现测试成功: ssh -T git@github.com
 
-Host github.com
-User 603480498@qq.com
-Hostname ssh.github.com
-PreferredAuthentications publickey  
-IdentityFile ~/.ssh/id_rsa
-Port 443
+Host github.com  
+User 603480498@qq.com  
+Hostname ssh.github.com  
+PreferredAuthentications publickey    
+IdentityFile ~/.ssh/id_rsa  
+Port 443  
 
 >>首次手动部署项目到服务器
 git clone git@github.com:Jcai12321/webhook-php-github-auto-deploy.git  webhook
