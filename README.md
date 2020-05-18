@@ -12,9 +12,8 @@ auto_deploy.sh  根据不同的仓库hook请求，执行资源更新、部署操
 
 使用 Github 的 webhook钩子 实现线上项目的自动部署
 
-一，
 在github创建一个项目，如 Jcai12321/webhook-php-github-auto-deploy，点击 Repositories -> 项目 -> Settings -> Webhooks -> Add Webhook
-添加 接收Payload地址和Secret: http://xxx.com:11111/hook ,设置 Content-Type:application/json，填写secret, 勾选 Active ，提交即可
+添加 接收Payload地址和Secret: http://xxx.com:11111/hook (本项目hook.php访问地址) ,设置 Content-Type:application/json，填写secret, 勾选 Active ，提交即可
 
 生成秘钥对：ssh-keygen -t rsa -C "你的邮箱"
 
@@ -47,6 +46,10 @@ Port 443
 首次手动部署项目到服务器
 git clone git@github.com:Jcai12321/webhook-php-github-auto-deploy.git  webhook
 
-开启免密码sudo
+开启www用户，免密码sudo权限（可只分配部分的执行权限）
 vim /etc/sudoers 添加:
 www     ALL=(ALL)       NOPASSWD:ALL
+
+将本项目放在webhook通知可访问的站点上
+
+最后提交代码测试下吧！！！
