@@ -40,6 +40,6 @@ fi
 /bin/sudo chown -R www:www ./*
 /bin/sudo chmod -R 755 ./*
 
-echo "time:[${DATE}] repository:${WEB_DIR} cmd: /bin/git pull" | tee -a ${LOG_FILE}
+echo "[${DATE}] repository:${WEB_DIR} cmd: /bin/git pull" | tee -a ${LOG_FILE}
 
 exit
