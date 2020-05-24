@@ -100,7 +100,6 @@ class WebHookUtil
     {
         $cmd = "cd {$this->deployPath}; /bin/sudo ./auto_deploy.sh {$this->repository}";
         exec($cmd, $output, $return_var);
-        print_r($output);
         ($return_var == 0) ? $this->end(ErrorCode::OK) : $this->end(ErrorCode::EXECUTE_ERROR, '执行出现异常');
     }
 
