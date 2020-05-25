@@ -99,6 +99,8 @@ class WebHookUtil
     private function handle()
     {
         $cmd = "cd {$this->deployPath}; /bin/sudo ./auto_deploy.sh {$this->repository}";
+        //后台执行nohup
+        //$cmd = "cd {$this->deployPath}; /usr/bin/sudo nohup ./auto_deploy.sh {$this->repository} > /dev/null 2>&1 & echo $!";
         exec($cmd, $output, $return_var);
         ($return_var == 0) ? $this->end(ErrorCode::OK) : $this->end(ErrorCode::EXECUTE_ERROR, '执行出现异常');
     }
